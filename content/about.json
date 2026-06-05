@@ -1,0 +1,11 @@
+{
+  "headline": "Engineering Depth, Not Just Demos",
+  "bio": "I'm a full-stack software engineer who thrives at the intersection of system design and hands-on implementation. I don't just build features — I architect systems that scale, handle edge cases gracefully, and ship with production-grade reliability.",
+  "pitch": "What sets me apart is my end-to-end ownership mindset. From designing database schemas and caching strategies to crafting pixel-perfect UIs with smooth animations, I bring the full picture together. Every project I build is a system design exercise — with real users, real constraints, and real trade-offs.",
+  "differentiators": [
+    "System Design Practitioner — I build what I design, from URL shorteners to distributed file systems",
+    "Production Mindset — Auth, caching, error handling, and monitoring are built-in, not afterthoughts",
+    "Full-Stack Fluency — Equally comfortable writing Express middleware and crafting React animations",
+    "Engineering Blog Approach — Each project comes with architecture decisions and trade-off analysis"
+  ]
+}

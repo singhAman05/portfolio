@@ -1,0 +1,52 @@
+[
+  {
+    "id": "finance-tracker",
+    "title": "Finance Tracker",
+    "description": "Full-stack personal finance web app focused on clarity, control, and consistency. Helps users manage accounts, track spending, monitor budgets, and stay ahead of recurring bills with a clean, fast, mobile-friendly experience.",
+    "tags": ["Next.js 15", "React 19", "TypeScript", "Redux Toolkit", "Tailwind CSS", "Framer Motion", "Express", "Supabase", "Redis", "Nodemailer"],
+    "github": "https://github.com/singhAman05/Finance-Tracker",
+    "live": "https://finance-tracker-amber-one.vercel.app/",
+    "image": "/projects/finance-tracker.png",
+    "featured": true,
+    "highlights": [
+      "Unified dashboard for net worth, cash flow, budgets, and bills",
+      "Redis caching layer for performance optimization",
+      "Google OAuth + backend auth controls with secure session management",
+      "Automated scheduler for reminders and budget alerts via node-cron",
+      "Engineering blog and direct feedback pipeline built into the product"
+    ]
+  },
+  {
+    "id": "distributed-file-system",
+    "title": "Distributed File System",
+    "description": "A distributed file storage system designed for efficient and reliable file storage and retrieval across multiple storage servers. Supports concurrent uploads/downloads with high availability and fuzzy search capabilities.",
+    "tags": ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "JavaScript"],
+    "github": "https://github.com/singhAman05/Distributed_File_System",
+    "live": "",
+    "image": "/projects/distributed-file-system.png",
+    "featured": true,
+    "highlights": [
+      "Concurrent uploads and downloads across multiple storage servers",
+      "Fuzzy search system for finding files with partial/approximate queries",
+      "Load balancer distributing data chunks for rapid access and high availability",
+      "Server health monitoring with cron jobs and automatic data redistribution",
+      "Personalized user dashboard with dynamic system status"
+    ]
+  },
+  {
+    "id": "food-delivery-app",
+    "title": "Crave Express - Food Delivery",
+    "description": "A MERN stack food delivery web platform offering takeout service that connects consumers with local restaurants, providing a convenient way to order food with payment integration.",
+    "tags": ["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "CSS"],
+    "github": "https://github.com/singhAman05/Food-Delivery_webApp",
+    "live": "",
+    "image": "/projects/food-delivery.png",
+    "featured": false,
+    "highlights": [
+      "Full-stack MERN application with restaurant listing and ordering",
+      "Payment integration for seamless checkout experience",
+      "Real-time order tracking and status updates",
+      "Responsive UI connecting consumers with local restaurants"
+    ]
+  }
+]

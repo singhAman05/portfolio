@@ -1,0 +1,50 @@
+[
+  {
+    "id": "url-shortener",
+    "title": "URL Shortener",
+    "description": "A full-stack URL shortener service with custom expiry dates, Redis caching for fast lookups, and a cron job to sync usage metrics from Redis to Supabase. Part 1 of the System Design Mastery series.",
+    "tags": ["Next.js", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Express", "TypeScript", "Supabase", "Redis"],
+    "github": "https://github.com/singhAman05/url-shortner",
+    "live": "https://url-shortner-nine-pi.vercel.app/",
+    "image": "/diagrams/url-shortener.png",
+    "highlights": [
+      "Redis-backed caching for sub-millisecond short URL lookups",
+      "Custom expiry dates with automatic link expiration",
+      "Cron job persisting last_used timestamps from Redis to Supabase",
+      "RESTful API: POST /shorten and GET /:shortId redirect"
+    ],
+    "architecture": {
+      "components": ["Next.js Frontend", "Express API", "Redis Cache", "Supabase (Postgres)", "Cron Scheduler"],
+      "decisions": [
+        "Redis as primary lookup cache to minimize DB hits on redirects",
+        "Supabase for durable storage with custom expiry tracking",
+        "Scheduled flush pattern: batch Redis → Postgres writes every minute",
+        "Domain-restricted short keys with collision handling"
+      ]
+    }
+  },
+  {
+    "id": "web-crawler",
+    "title": "Web Crawler Platform",
+    "description": "A full-stack web crawler with a modern dashboard frontend and TypeScript backend API. Start crawl jobs from a seed URL, limit depth, and monitor job status in real-time. Part 3 of the System Design Mastery series.",
+    "tags": ["Next.js", "React", "TypeScript", "Express", "Axios", "Cheerio"],
+    "github": "https://github.com/singhAman05/web_crawler",
+    "live": "https://web-crawler-alpha.vercel.app/",
+    "image": "/diagrams/web-crawler.png",
+    "highlights": [
+      "Configurable crawl depth with max pages limit",
+      "Domain-restricted crawling to avoid external host traversal",
+      "Real-time job status tracking with timing and page counts",
+      "Cheerio-based HTML parsing for efficient link extraction"
+    ],
+    "architecture": {
+      "components": ["Next.js Dashboard", "Express API", "In-Memory Job Store", "Axios Fetcher", "Cheerio Parser"],
+      "decisions": [
+        "In-memory job storage for fast iteration (persistent storage planned)",
+        "Domain restriction to prevent unbounded crawl scope",
+        "BFS traversal strategy with configurable depth limits",
+        "Separation of fetcher and parser for future worker distribution"
+      ]
+    }
+  }
+]

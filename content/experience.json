@@ -1,0 +1,24 @@
+[
+  {
+    "company": "Building in Public",
+    "role": "Full-Stack Software Engineer",
+    "period": "2024 - Present",
+    "description": "Designing and building production-grade systems from scratch, focusing on system design mastery and full-stack development.",
+    "achievements": [
+      "Built a full-stack finance tracker with real-time budget alerts and Redis caching",
+      "Completed 3-part system design series: URL Shortener, Rate Limiter, Web Crawler",
+      "Shipped multiple production apps on Vercel with OAuth, cron jobs, and monitoring"
+    ]
+  },
+  {
+    "company": "Open Source & Academic Projects",
+    "role": "Software Developer",
+    "period": "2022 - 2024",
+    "description": "Developed multiple full-stack applications and contributed to open-source projects while studying at MNNIT.",
+    "achievements": [
+      "Built a distributed file system with load balancing and server health monitoring",
+      "Developed Crave Express food delivery platform with payment integration",
+      "Solved 500+ DSA problems across LeetCode, Codeforces, and CodeChef"
+    ]
+  }
+]

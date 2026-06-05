@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Frontend",
+      "skills": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "shadcn/ui", "HTML/CSS"]
+    },
+    {
+      "name": "Backend",
+      "skills": ["Node.js", "Express.js", "TypeScript", "REST APIs", "WebSockets", "Nodemailer", "node-cron"]
+    },
+    {
+      "name": "Databases & Caching",
+      "skills": ["PostgreSQL", "Supabase", "MongoDB", "Redis", "MongoDB Atlas"]
+    },
+    {
+      "name": "DevOps & Tools",
+      "skills": ["Git", "GitHub", "Vercel", "Docker", "Linux", "CI/CD"]
+    },
+    {
+      "name": "Languages",
+      "skills": ["TypeScript", "JavaScript", "C++", "Python"]
+    },
+    {
+      "name": "System Design",
+      "skills": ["Distributed Systems", "Caching Strategies", "Load Balancing", "URL Shortening", "Web Crawling", "Rate Limiting"]
+    }
+  ]
+}

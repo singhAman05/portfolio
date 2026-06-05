@@ -1,0 +1,14 @@
+{
+  "name": "Aman Shankar Singh",
+  "tagline": "Software Engineer building scalable, production-ready systems",
+  "email": "amanshankarsingh05@gmail.com",
+  "github": "https://github.com/singhAman05",
+  "linkedin": "https://linkedin.com/in/singhaman05",
+  "twitter": "https://twitter.com/singhAman05",
+  "resume": "/resume.pdf",
+  "seo": {
+    "title": "Aman Shankar Singh | Software Engineer",
+    "description": "Full-stack software engineer specializing in scalable web applications, system design, and distributed systems. Building production-ready solutions with Next.js, TypeScript, and modern tooling.",
+    "ogImage": "/og-image.png"
+  }
+}
