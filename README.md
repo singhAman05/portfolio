@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Aman Shankar Singh
+
+Personal portfolio and blog built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Framer Motion.
+
+## Features
+
+- **Home** — Hero, about, featured projects, system design spotlight, skills, timeline, and contact form
+- **Projects** — Filterable grid of full-stack projects with tags and highlights
+- **System Design** — Architecture case studies with component diagrams and trade-off analysis
+- **Blog** — Technical articles auto-synced from external repos (see [Content Sync](#content-sync))
+- **Dark/Light Mode** — Theme toggle with system preference detection
+- **Contact Form** — Powered by Formspree with error feedback
+
+## Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript 5 |
+| Styling | Tailwind CSS 4 + shadcn/ui |
+| Animation | Framer Motion |
+| Fonts | DM Sans, Plus Jakarta Sans, JetBrains Mono |
+| Deployment | Vercel |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+content/          # JSON data (site config, projects, skills, experience)
+src/
+  app/            # Next.js App Router pages
+  components/     # UI components (layout, sections, ui)
+  lib/            # Utilities and content loaders
+public/           # Static assets (resume, images)
+```
 
-## Learn More
+## Content Sync
 
-To learn more about Next.js, take a look at the following resources:
+Blog posts are automatically synced from linked repositories (e.g., [LLD-System_Design](https://github.com/singhAman05/LLD-System_Design)) via GitHub Actions. When markdown files are pushed to a source repo, a workflow dispatches an event to this repo, which fetches the latest content and deploys.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
