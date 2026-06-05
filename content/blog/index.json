@@ -7,14 +7,21 @@
         "slug": "c-oop-codebase-overview",
         "title": "C++ OOP Codebase — Overview",
         "order": 1,
-        "readingTime": 2,
-        "tags": []
+        "readingTime": 3,
+        "tags": [
+          "cpp",
+          "oop",
+          "encapsulation",
+          "inheritance",
+          "polymorphism",
+          "abstraction"
+        ]
       },
       {
-        "slug": "classescpp-car-class-encapsulation",
-        "title": "classes.cpp — Car Class (Encapsulation)",
+        "slug": "classes-encapsulation-in-c",
+        "title": "Classes & Encapsulation in C++",
         "order": 2,
-        "readingTime": 2,
+        "readingTime": 3,
         "tags": [
           "cpp",
           "oop",
@@ -24,10 +31,10 @@
         ]
       },
       {
-        "slug": "inheritancecpp-animal-hierarchy-inheritance",
-        "title": "inheritance.cpp — Animal Hierarchy (Inheritance)",
+        "slug": "inheritance-method-overriding-in-c",
+        "title": "Inheritance & Method Overriding in C++",
         "order": 3,
-        "readingTime": 2,
+        "readingTime": 3,
         "tags": [
           "cpp",
           "oop",
@@ -43,32 +50,111 @@
     "slug": "design-principles",
     "posts": [
       {
-        "slug": "what-is-the-dry-principle",
-        "title": "What is the DRY Principle?",
+        "slug": "dry-principle-dont-repeat-yourself",
+        "title": "DRY Principle — Don't Repeat Yourself",
         "order": 1,
         "readingTime": 2,
-        "tags": []
+        "tags": [
+          "design-principles",
+          "dry",
+          "refactoring",
+          "clean-code"
+        ]
       },
       {
-        "slug": "what-is-the-kiss-principle",
-        "title": "What is the KISS Principle?",
+        "slug": "kiss-principle-keep-it-simple",
+        "title": "KISS Principle — Keep It Simple",
         "order": 2,
         "readingTime": 5,
-        "tags": []
+        "tags": [
+          "design-principles",
+          "kiss",
+          "simplicity",
+          "clean-code"
+        ]
       },
       {
-        "slug": "what-is-the-yagni-principle",
-        "title": "What is the YAGNI Principle?",
+        "slug": "yagni-principle-you-arent-gonna-need-it",
+        "title": "YAGNI Principle — You Aren't Gonna Need It",
         "order": 3,
         "readingTime": 4,
-        "tags": []
+        "tags": [
+          "design-principles",
+          "yagni",
+          "simplicity",
+          "agile"
+        ]
       },
       {
-        "slug": "solid-principles",
-        "title": "SOLID Principles",
+        "slug": "solid-principles-the-complete-guide",
+        "title": "SOLID Principles — The Complete Guide",
         "order": 4,
         "readingTime": 5,
-        "tags": []
+        "tags": [
+          "design-principles",
+          "solid",
+          "srp",
+          "ocp",
+          "lsp",
+          "isp",
+          "dip"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Concurrency & Multithreading",
+    "slug": "concurrency-multithreading",
+    "posts": [
+      {
+        "slug": "what-is-concurrency",
+        "title": "What is Concurrency?",
+        "order": 1,
+        "readingTime": 4,
+        "tags": [
+          "concurrency",
+          "multithreading",
+          "os",
+          "systems"
+        ]
+      },
+      {
+        "slug": "concurrency-vs-parallelism",
+        "title": "Concurrency vs Parallelism",
+        "order": 2,
+        "readingTime": 4,
+        "tags": [
+          "concurrency",
+          "parallelism",
+          "multithreading",
+          "cpu"
+        ]
+      },
+      {
+        "slug": "processes-vs-threads",
+        "title": "Processes vs Threads",
+        "order": 3,
+        "readingTime": 5,
+        "tags": [
+          "concurrency",
+          "processes",
+          "threads",
+          "os",
+          "memory"
+        ]
+      },
+      {
+        "slug": "thread-lifecycle-states",
+        "title": "Thread Lifecycle & States",
+        "order": 4,
+        "readingTime": 5,
+        "tags": [
+          "concurrency",
+          "threads",
+          "lifecycle",
+          "os",
+          "scheduling"
+        ]
       }
     ]
   },
@@ -77,136 +163,117 @@
     "slug": "exercises",
     "posts": [
       {
-        "slug": "foodcpp-food-order-system-state-management",
-        "title": "food.cpp — Food Order System (State Management)",
+        "slug": "food-order-system-state-management",
+        "title": "Food Order System � State Management",
         "order": 1,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
           "encapsulation",
-          "state",
-          "vector",
-          "food"
+          "state-management",
+          "vectors"
         ]
       },
       {
-        "slug": "temperature_sensorcpp-temperature-sensor-data-validation",
-        "title": "temperature_sensor.cpp — Temperature Sensor (Data Validation)",
+        "slug": "temperature-sensor-data-validation",
+        "title": "Temperature Sensor � Data Validation",
         "order": 2,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
           "validation",
-          "stl",
-          "accumulate",
-          "sensor"
+          "stl-algorithms"
         ]
       },
       {
-        "slug": "shoppingcart_systemcpp-shopping-cart-system",
-        "title": "shoppingCart_system.cpp — Shopping Cart System",
+        "slug": "shopping-cart-system-maps-discount-logic",
+        "title": "Shopping Cart System � Maps & Discount Logic",
         "order": 3,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
-          "unordered_map",
-          "state",
-          "discount",
-          "shopping"
+          "unordered-map",
+          "encapsulation"
         ]
       },
       {
-        "slug": "bank_hierarchycpp-bank-account-hierarchy",
-        "title": "bank_hierarchy.cpp — Bank Account Hierarchy",
+        "slug": "bank-account-hierarchy-inheritance-in-action",
+        "title": "Bank Account Hierarchy � Inheritance in Action",
         "order": 4,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
           "inheritance",
-          "virtual",
-          "protected",
-          "bank"
+          "virtual-methods",
+          "protected"
         ]
       },
       {
-        "slug": "notification_systemcpp-notification-system",
-        "title": "notification_system.cpp — Notification System",
+        "slug": "notification-system-polymorphism-runtime-dispatch",
+        "title": "Notification System � Polymorphism & Runtime Dispatch",
         "order": 5,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
           "polymorphism",
-          "virtual",
           "inheritance",
-          "notifications",
-          "vector-of-pointers"
+          "vectors"
         ]
       },
       {
-        "slug": "paymentscpp-payment-gateway-abstract-class-dependency-injection",
-        "title": "payments.cpp — Payment Gateway (Abstract Class + Dependency Injection)",
+        "slug": "payment-gateway-abstract-classes-dependency-injection",
+        "title": "Payment Gateway � Abstract Classes & Dependency Injection",
         "order": 6,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
           "abstract-class",
-          "pure-virtual",
           "dependency-injection",
-          "polymorphism",
-          "payments"
+          "polymorphism"
         ]
       },
       {
-        "slug": "data_exportercpp-data-exporter-abstract-class-template-method",
-        "title": "data_exporter.cpp — Data Exporter (Abstract Class + Template Method)",
+        "slug": "data-exporter-template-method-pattern",
+        "title": "Data Exporter � Template Method Pattern",
         "order": 7,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
           "abstract-class",
-          "pure-virtual",
           "template-method",
-          "exporter",
-          "json",
-          "csv"
+          "design-patterns"
         ]
       },
       {
-        "slug": "discount_systemcpp-discount-system-polymorphism-strategy-pattern",
-        "title": "discount_system.cpp — Discount System (Polymorphism + Strategy Pattern)",
+        "slug": "discount-system-strategy-pattern",
+        "title": "Discount System � Strategy Pattern",
         "order": 8,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
-          "abstract-class",
           "polymorphism",
-          "strategy-pattern",
-          "discount",
-          "snprintf"
+          "strategy-pattern"
         ]
       },
       {
-        "slug": "shape_hierarchycpp-shape-hierarchy-polymorphism-dynamic-dispatch",
-        "title": "shape_hierarchy.cpp — Shape Hierarchy (Polymorphism + Dynamic Dispatch)",
+        "slug": "shape-hierarchy-dynamic-dispatch-virtual-functions",
+        "title": "Shape Hierarchy � Dynamic Dispatch & Virtual Functions",
         "order": 9,
         "readingTime": 2,
         "tags": [
           "cpp",
           "oop",
           "polymorphism",
-          "virtual",
-          "dynamic-memory",
-          "shapes",
-          "vtable",
-          "M_PI"
+          "virtual-functions",
+          "dynamic-memory"
         ]
       }
     ]

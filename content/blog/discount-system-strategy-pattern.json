@@ -1,0 +1,17 @@
+{
+  "slug": "discount-system-strategy-pattern",
+  "title": "Discount System � Strategy Pattern",
+  "series": "Exercises",
+  "seriesSlug": "exercises",
+  "order": 8,
+  "tags": [
+    "cpp",
+    "oop",
+    "polymorphism",
+    "strategy-pattern"
+  ],
+  "readingTime": 2,
+  "content": "# discount_system.cpp — Discount System (Polymorphism + Strategy Pattern)\r\n\r\n**Concept:** Abstract Class, Polymorphism, Strategy Pattern, `snprintf` for Label Formatting\r\n\r\n---\r\n\r\n## What Does This File Do?\r\n\r\nA flexible discount system supporting three types of discounts: percentage off, flat amount off, and buy-one-get-one-free. Each is its own class. The `orderProcessor` applies any discount without knowing its type — it just calls `describe()`.\r\n\r\n---\r\n\r\n## Key Concepts\r\n\r\n### Abstract Base: `discountSystem`\r\n\r\n```cpp\r\nclass discountSystem {\r\nprotected:\r\n    string label;\r\npublic:\r\n    virtual double apply(double price) = 0;  // Pure virtual — must be implemented\r\n    void describe(double originalPrice) {\r\n        double discountedPrice = apply(originalPrice);  // Calls overridden version\r\n        // prints: \"label: $original -> $discounted\"\r\n    }\r\n};\r\n```\r\n\r\n`describe()` is a **concrete method** that internally calls the abstract `apply()`. This is the **Template Method** pattern again — the base class controls the flow, subclasses supply the calculation.\r\n\r\n### `snprintf` for Dynamic Labels\r\n\r\n```cpp\r\nchar buf[32];\r\nsnprintf(buf, sizeof(buf), \"%.1f\", percentage);\r\nthis->label = string(buf) + \"% off\";\r\n```\r\n\r\n`snprintf` formats a number into a char buffer safely (prevents buffer overflow). Then it's converted to `std::string`. Used to build labels like `\"20.0% off\"` or `\"$15.0 off\"`.\r\n\r\n### Three Discount Strategies\r\n\r\n|Class|Logic|Example|\r\n|---|---|---|\r\n|`percentageDiscount`|`price * (1 - pct/100)`|20% off $999.99 → $799.99|\r\n|`flatDiscount`|`max(0, price - amount)`|$15 off $49.99 → $34.99|\r\n|`buyOneGetOneFree`|`price / 2`|$79.98 → $39.99 (effectively)|\r\n\r\n### `max(0.0, price - amount)`\r\n\r\nPrevents flat discounts from going negative — e.g., $15 off a $5 item = $0, not -$10.\r\n\r\n### Strategy Pattern\r\n\r\n```cpp\r\nvoid processOrder(const string &itemName, double price, discountSystem *discount) {\r\n    discount->describe(price);  // Works for ANY discount type\r\n}\r\n```\r\n\r\n`orderProcessor` doesn't know (or care) what kind of discount is passed — it just calls `describe()`. You can swap strategies at runtime.\r\n\r\n---\r\n\r\n## Code Walkthrough\r\n\r\n```\r\nLaptop $999.99 → 20% off: $999.99 -> $799.99\r\nHeadphones $49.99 → $15 off: $49.99 -> $34.99\r\nKeyboard $79.98 → BOGO: $79.98 -> $39.99\r\n```\r\n\r\n---\r\n\r\n## Takeaway\r\n\r\n> The **Strategy Pattern** = define a family of algorithms (discounts), encapsulate each one, make them interchangeable. Code that uses them (`orderProcessor`) doesn't need to change when new strategies are added.\r\n\r\n---",
+  "sourceRepo": "LLD-System_Design",
+  "sourceFile": "Exercises\\10 - Discount System.md"
+}

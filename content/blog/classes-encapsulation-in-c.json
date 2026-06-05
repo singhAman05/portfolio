@@ -1,0 +1,18 @@
+{
+  "slug": "classes-encapsulation-in-c",
+  "title": "Classes & Encapsulation in C++",
+  "series": "OOP Fundamentals",
+  "seriesSlug": "oop-fundamentals",
+  "order": 2,
+  "tags": [
+    "cpp",
+    "oop",
+    "encapsulation",
+    "classes",
+    "constructor"
+  ],
+  "readingTime": 3,
+  "content": "# Classes & Encapsulation in C++\r\n\r\n## What You'll Learn\r\n\r\nHow to define a class that models a real-world entity with **private data** and **public methods** — the foundation of encapsulation in C++.\r\n\r\n---\r\n\r\n## The Problem\r\n\r\nWithout classes, you'd use loose variables and functions. Anyone can set `speed = -500` and there's no way to prevent invalid state. The program has no structure, no safety, and no scalability.\r\n\r\n## The Solution: Encapsulation\r\n\r\nA `class` bundles data and behavior together. You mark data as `private` (hidden) and expose controlled access through `public` methods.\r\n\r\n```cpp\r\nclass car {\r\nprivate:\r\n    string brand;\r\n    string model;\r\n    int speed;\r\n\r\npublic:\r\n    car(string &brand_name, string &model_name)\r\n        : brand(brand_name), model(model_name), speed(0) {}\r\n\r\n    void accelerate(int increment) { speed += increment; }\r\n\r\n    void brake(int decrement) {\r\n        speed -= decrement;\r\n        if (speed < 0) speed = 0;  // Guard clause\r\n    }\r\n\r\n    void display_status() {\r\n        cout << \"Brand: \" << brand << endl;\r\n        cout << \"Model: \" << model << endl;\r\n        cout << \"Speed: \" << speed << \" km/h\" << endl;\r\n    }\r\n};\r\n```\r\n\r\n---\r\n\r\n## Key Concepts\r\n\r\n### Data Hiding\r\n\r\n`speed`, `brand`, `model` are `private` — they cannot be accessed or modified directly from outside the class. This prevents external code from putting the object into an invalid state.\r\n\r\n### Constructor\r\n\r\n```cpp\r\ncar(string &brand_name, string &model_name)\r\n    : brand(brand_name), model(model_name), speed(0) {}\r\n```\r\n\r\n- Takes brand and model by **reference** (avoids copying overhead)\r\n- Sets speed to `0` by default — a safe initial state\r\n- Uses **member initializer list** for efficient initialization\r\n\r\n### Public Interface\r\n\r\n| Method | What it does |\r\n|--------|-------------|\r\n| `accelerate(int)` | Increases speed by given amount |\r\n| `brake(int)` | Decreases speed, clamped to 0 (no negative speed) |\r\n| `display_status()` | Prints brand, model, and current speed |\r\n\r\n---\r\n\r\n## Code Walkthrough\r\n\r\n### Guard Clause Pattern\r\n\r\n```cpp\r\nvoid brake(int decrement) {\r\n    speed -= decrement;\r\n    if (speed < 0) speed = 0;  // Guard: speed can't go below 0\r\n}\r\n```\r\n\r\n> This is a **guard clause** — a safety check that prevents the object from reaching an invalid state. The car can never have negative speed.\r\n\r\n### Usage\r\n\r\n```cpp\r\ncar myCar(brand, model);  // Constructor called — speed = 0\r\nmyCar.accelerate(50);     // speed = 50\r\nmyCar.brake(20);          // speed = 30\r\nmyCar.brake(100);         // speed = 0 (clamped, not -70)\r\n```\r\n\r\n---\r\n\r\n## Design Decisions\r\n\r\n| Decision | Why |\r\n|----------|-----|\r\n| `speed` is private | External code can't set it to invalid values |\r\n| Constructor sets speed to 0 | Every car starts stationary — safe default |\r\n| `brake()` clamps to 0 | Physical impossibility modeled correctly |\r\n| Pass-by-reference in constructor | Avoids unnecessary string copies |\r\n\r\n---\r\n\r\n## Takeaway\r\n\r\n> **Encapsulation = data hiding + controlled access.** The car's speed can't be set to -999 from outside — the class enforces its own invariants. This is the most fundamental principle of OOP.",
+  "sourceRepo": "LLD-System_Design",
+  "sourceFile": "01 - Classes.md"
+}
