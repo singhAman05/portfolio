@@ -1,0 +1,19 @@
+{
+  "slug": "shoppingcart_systemcpp-shopping-cart-system",
+  "title": "shoppingCart_system.cpp — Shopping Cart System",
+  "series": "Exercises",
+  "seriesSlug": "exercises",
+  "order": 3,
+  "tags": [
+    "cpp",
+    "oop",
+    "unordered_map",
+    "state",
+    "discount",
+    "shopping"
+  ],
+  "readingTime": 2,
+  "content": "# 📄 shoppingCart_system.cpp — Shopping Cart System\r\n\r\n**File:** `shoppingCart_system.cpp` **Concept:** Classes, `unordered_map`, State Flags, Discount Logic\r\n\r\n---\r\n\r\n## 🧠 What Does This File Do?\r\n\r\nA shopping cart that lets you add items (by price), apply a discount code, calculate total, and check out. Once checked out, the cart is locked — nothing can be added or discounted further.\r\n\r\n---\r\n\r\n## 🔑 Key Concepts\r\n\r\n### `unordered_map<string, double>`\r\n\r\n```cpp\r\nunordered_map<string, double> items;\r\n```\r\n\r\nMaps item names to their prices. Adding the same item again **adds to** its price value (not replacing). This acts like a running total per item.\r\n\r\n### Discount Code System\r\n\r\nOnly one discount code (`\"SAVE10\"`) is valid, and it can only be applied **once** before checkout. The flag `discount_code != \"\"` ensures no double-dipping.\r\n\r\n### Checkout Lock\r\n\r\n`is_checked_out` is a boolean that, once `true`, blocks all mutations to the cart — a pattern called **immutability after commit**.\r\n\r\n### `fixed` and `setprecision(2)`\r\n\r\n```cpp\r\ncout << fixed << setprecision(2);\r\n```\r\n\r\nEnsures prices always display with exactly 2 decimal places (e.g., `$926.98` not `$926.982`).\r\n\r\n---\r\n\r\n## 🔍 Code Walkthrough\r\n\r\n```cpp\r\nvoid addItem(string item, double quantity) {\r\n    if (is_checked_out) { return; }  // Locked after checkout\r\n    items[item] += quantity;          // Accumulates price per item\r\n}\r\n```\r\n\r\n```cpp\r\nbool applyDiscount(string code) {\r\n    if (is_checked_out) return false;    // Too late\r\n    if (discount_code != \"\") return false; // Already applied\r\n    if (code == \"SAVE10\") {\r\n        discount_code = code;\r\n        return true;\r\n    }\r\n    return false;\r\n}\r\n```\r\n\r\n```cpp\r\ndouble getTotal() {\r\n    double total = 0;\r\n    for (auto &item : items) total += item.second; // Sum all prices\r\n    if (discount_code == \"SAVE10\") total *= 0.9;   // 10% off\r\n    return total;\r\n}\r\n```\r\n\r\n**Flow in `main()`:**\r\n\r\n```\r\nAdd Laptop ($999.99) + Mouse ($29.99) → Total: $1029.98\r\nApply SAVE10 → Total: $926.98\r\nTry SAVE10 again → false (already applied)\r\nCheckout → cart locked\r\nAdd Keyboard → rejected\r\nTotal still: $926.98\r\n```\r\n\r\n---\r\n\r\n## 💡 Takeaway\r\n\r\n> Boolean state flags are great for simple lifecycle control. The cart can only move **forward** (open → checked out), never backward — just like real e-commerce systems.\r\n\r\n---",
+  "sourceRepo": "LLD-System_Design",
+  "sourceFile": "Exercises\\04 - Shopping Cart System.md"
+}

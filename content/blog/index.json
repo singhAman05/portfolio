@@ -1,0 +1,214 @@
+[
+  {
+    "name": "OOP Fundamentals",
+    "slug": "oop-fundamentals",
+    "posts": [
+      {
+        "slug": "c-oop-codebase-overview",
+        "title": "C++ OOP Codebase — Overview",
+        "order": 1,
+        "readingTime": 2,
+        "tags": []
+      },
+      {
+        "slug": "classescpp-car-class-encapsulation",
+        "title": "classes.cpp — Car Class (Encapsulation)",
+        "order": 2,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "encapsulation",
+          "classes",
+          "constructor"
+        ]
+      },
+      {
+        "slug": "inheritancecpp-animal-hierarchy-inheritance",
+        "title": "inheritance.cpp — Animal Hierarchy (Inheritance)",
+        "order": 3,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "inheritance",
+          "override",
+          "constructor-chaining"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Design Principles",
+    "slug": "design-principles",
+    "posts": [
+      {
+        "slug": "what-is-the-dry-principle",
+        "title": "What is the DRY Principle?",
+        "order": 1,
+        "readingTime": 2,
+        "tags": []
+      },
+      {
+        "slug": "what-is-the-kiss-principle",
+        "title": "What is the KISS Principle?",
+        "order": 2,
+        "readingTime": 5,
+        "tags": []
+      },
+      {
+        "slug": "what-is-the-yagni-principle",
+        "title": "What is the YAGNI Principle?",
+        "order": 3,
+        "readingTime": 4,
+        "tags": []
+      },
+      {
+        "slug": "solid-principles",
+        "title": "SOLID Principles",
+        "order": 4,
+        "readingTime": 5,
+        "tags": []
+      }
+    ]
+  },
+  {
+    "name": "Exercises",
+    "slug": "exercises",
+    "posts": [
+      {
+        "slug": "foodcpp-food-order-system-state-management",
+        "title": "food.cpp — Food Order System (State Management)",
+        "order": 1,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "encapsulation",
+          "state",
+          "vector",
+          "food"
+        ]
+      },
+      {
+        "slug": "temperature_sensorcpp-temperature-sensor-data-validation",
+        "title": "temperature_sensor.cpp — Temperature Sensor (Data Validation)",
+        "order": 2,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "validation",
+          "stl",
+          "accumulate",
+          "sensor"
+        ]
+      },
+      {
+        "slug": "shoppingcart_systemcpp-shopping-cart-system",
+        "title": "shoppingCart_system.cpp — Shopping Cart System",
+        "order": 3,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "unordered_map",
+          "state",
+          "discount",
+          "shopping"
+        ]
+      },
+      {
+        "slug": "bank_hierarchycpp-bank-account-hierarchy",
+        "title": "bank_hierarchy.cpp — Bank Account Hierarchy",
+        "order": 4,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "inheritance",
+          "virtual",
+          "protected",
+          "bank"
+        ]
+      },
+      {
+        "slug": "notification_systemcpp-notification-system",
+        "title": "notification_system.cpp — Notification System",
+        "order": 5,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "polymorphism",
+          "virtual",
+          "inheritance",
+          "notifications",
+          "vector-of-pointers"
+        ]
+      },
+      {
+        "slug": "paymentscpp-payment-gateway-abstract-class-dependency-injection",
+        "title": "payments.cpp — Payment Gateway (Abstract Class + Dependency Injection)",
+        "order": 6,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "abstract-class",
+          "pure-virtual",
+          "dependency-injection",
+          "polymorphism",
+          "payments"
+        ]
+      },
+      {
+        "slug": "data_exportercpp-data-exporter-abstract-class-template-method",
+        "title": "data_exporter.cpp — Data Exporter (Abstract Class + Template Method)",
+        "order": 7,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "abstract-class",
+          "pure-virtual",
+          "template-method",
+          "exporter",
+          "json",
+          "csv"
+        ]
+      },
+      {
+        "slug": "discount_systemcpp-discount-system-polymorphism-strategy-pattern",
+        "title": "discount_system.cpp — Discount System (Polymorphism + Strategy Pattern)",
+        "order": 8,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "abstract-class",
+          "polymorphism",
+          "strategy-pattern",
+          "discount",
+          "snprintf"
+        ]
+      },
+      {
+        "slug": "shape_hierarchycpp-shape-hierarchy-polymorphism-dynamic-dispatch",
+        "title": "shape_hierarchy.cpp — Shape Hierarchy (Polymorphism + Dynamic Dispatch)",
+        "order": 9,
+        "readingTime": 2,
+        "tags": [
+          "cpp",
+          "oop",
+          "polymorphism",
+          "virtual",
+          "dynamic-memory",
+          "shapes",
+          "vtable",
+          "M_PI"
+        ]
+      }
+    ]
+  }
+]

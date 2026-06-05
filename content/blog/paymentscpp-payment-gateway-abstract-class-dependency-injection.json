@@ -1,0 +1,20 @@
+{
+  "slug": "paymentscpp-payment-gateway-abstract-class-dependency-injection",
+  "title": "payments.cpp — Payment Gateway (Abstract Class + Dependency Injection)",
+  "series": "Exercises",
+  "seriesSlug": "exercises",
+  "order": 6,
+  "tags": [
+    "cpp",
+    "oop",
+    "abstract-class",
+    "pure-virtual",
+    "dependency-injection",
+    "polymorphism",
+    "payments"
+  ],
+  "readingTime": 2,
+  "content": "# 📄 payments.cpp — Payment Gateway (Abstract Class + Dependency Injection)\r\n\r\n**File:** `payments.cpp` **Concept:** Abstract Class, Pure Virtual Functions, Dependency Injection, Polymorphism\r\n\r\n---\r\n\r\n## 🧠 What Does This File Do?\r\n\r\nDefines a pluggable payment system. `Payment_Gateway` is an **abstract interface** — it forces any payment provider (PayPal, Stripe) to implement `process_payment()`. The `checkout_service` accepts any gateway and works with all of them the same way.\r\n\r\n---\r\n\r\n## 🔑 Key Concepts\r\n\r\n### Abstract Class with Pure Virtual Function\r\n\r\n```cpp\r\nclass Payment_Gateway {\r\npublic:\r\n    virtual ~Payment_Gateway() {}                    // Virtual destructor\r\n    virtual void process_payment(double amount) = 0; // Pure virtual — must be overridden\r\n};\r\n```\r\n\r\n- `= 0` makes this a **pure virtual function** — no default implementation.\r\n- Any class with a pure virtual function is an **abstract class** — you **cannot** instantiate it directly.\r\n- The `virtual` destructor ensures derived class destructors are called correctly when deleting via base pointer.\r\n\r\n### Concrete Implementations\r\n\r\n```cpp\r\nclass PayPal : public Payment_Gateway {\r\npublic:\r\n    void process_payment(double amount) override {\r\n        cout << \"Processing PayPal payment of $\" << amount << endl;\r\n    }\r\n};\r\n```\r\n\r\n`PayPal` and `Stripe` both **implement** the contract defined by `Payment_Gateway`.\r\n\r\n### Dependency Injection\r\n\r\n```cpp\r\nclass checkout_service {\r\nprivate:\r\n    Payment_Gateway *payment_gateway;  // Holds a pointer to the interface\r\npublic:\r\n    checkout_service(Payment_Gateway *gateway) : payment_gateway(gateway) {}\r\n    void complete_checkout(double amount) {\r\n        payment_gateway->process_payment(amount);  // Calls whichever gateway was injected\r\n    }\r\n};\r\n```\r\n\r\n`checkout_service` doesn't care **which** gateway it uses — it just knows it has a `Payment_Gateway`. You pass the concrete gateway in at construction time. This is **dependency injection**.\r\n\r\n---\r\n\r\n## 🔍 Code Walkthrough\r\n\r\n```cpp\r\nPayPal paypal_gateway;\r\nStripe stripe_gateway;\r\n\r\ncheckout_service paypal_checkout(&paypal_gateway);  // Inject PayPal\r\ncheckout_service stripe_checkout(&stripe_gateway);  // Inject Stripe\r\n\r\npaypal_checkout.complete_checkout(100.0);  // \"Processing PayPal payment of $100\"\r\nstripe_checkout.complete_checkout(200.0);  // \"Processing Stripe payment of $200\"\r\n```\r\n\r\n---\r\n\r\n## 💡 Takeaway\r\n\r\n> Abstract classes define **contracts**. Dependency injection + polymorphism = code that is **open to extension** (add new gateways) but **closed to modification** (don't touch `checkout_service`). This is the Open/Closed Principle.\r\n\r\n---",
+  "sourceRepo": "LLD-System_Design",
+  "sourceFile": "Exercises\\08 - Payment Gateway.md"
+}

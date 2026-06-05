@@ -1,0 +1,18 @@
+{
+  "slug": "inheritancecpp-animal-hierarchy-inheritance",
+  "title": "inheritance.cpp — Animal Hierarchy (Inheritance)",
+  "series": "OOP Fundamentals",
+  "seriesSlug": "oop-fundamentals",
+  "order": 3,
+  "tags": [
+    "cpp",
+    "oop",
+    "inheritance",
+    "override",
+    "constructor-chaining"
+  ],
+  "readingTime": 2,
+  "content": "# 📄 inheritance.cpp — Animal Hierarchy (Inheritance)\r\n\r\n**File:** `inheritance.cpp` **Concept:** Inheritance, Method Overriding, Constructor Chaining\r\n\r\n---\r\n\r\n## 🧠 What Does This File Do?\r\n\r\nModels an animal hierarchy. A base `animal` class holds common attributes (name, species, age). `dog` and `bird` classes **inherit** from `animal` and add their own unique attributes (breed, color, can_fly).\r\n\r\n---\r\n\r\n## 🔑 Key Concepts\r\n\r\n### Inheritance Syntax\r\n\r\n```cpp\r\nclass dog : public animal { ... };\r\n```\r\n\r\n`dog` is a **child class** (subclass) of `animal` (parent/base class). It inherits all public/protected members of `animal`.\r\n\r\n### Constructor Chaining with Initializer List\r\n\r\n```cpp\r\ndog(string name, string specie, int age, string breed) : animal(name, specie, age)\r\n{\r\n    this->breed = breed;\r\n}\r\n```\r\n\r\n- `: animal(name, specie, age)` calls the **parent constructor** first.\r\n- Then the dog-specific field `breed` is set.\r\n- `this->breed` disambiguates between the parameter `breed` and the member `breed`.\r\n\r\n### Method Overriding\r\n\r\n```cpp\r\nvoid display_info() override {\r\n    animal::display_info();   // Call parent version first\r\n    cout << \"Breed: \" << breed << endl;  // Then add dog-specific info\r\n}\r\n```\r\n\r\n- `override` keyword signals intentional override (compiler will warn if signature doesn't match).\r\n- `animal::display_info()` explicitly calls the **parent's version** — useful to reuse rather than rewrite shared logic.\r\n\r\n---\r\n\r\n## 🔍 Code Walkthrough\r\n\r\n**Hierarchy:**\r\n\r\n```\r\nanimal (name, species, age)\r\n├── dog   (+ breed)\r\n└── bird  (+ color, can_fly)\r\n```\r\n\r\n```cpp\r\ndog myDog(\"Bolt\", \"Husky\", 3, \"Siberian Husky\");\r\nmyDog.display_info();\r\n// Output:\r\n// Name: Bolt\r\n// Species: Husky\r\n// Age: 3 years\r\n// Breed: Siberian Husky\r\n```\r\n\r\n```cpp\r\nbird myBird(\"Tweety\", \"Canary\", 2, \"Yellow\", true);\r\nmyBird.display_info();\r\n// Output:\r\n// Name: Tweety\r\n// Species: Canary\r\n// Age: 2 years\r\n// Color: Yellow\r\n// Can Fly: Yes\r\n```\r\n\r\n---\r\n\r\n## 💡 Takeaway\r\n\r\n> Inheritance lets you **reuse** parent logic and **extend** it in child classes. Use `ParentClass::method()` inside overrides to avoid rewriting shared code.\r\n\r\n---",
+  "sourceRepo": "LLD-System_Design",
+  "sourceFile": "05 - Inheritance.md"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "bank_hierarchycpp-bank-account-hierarchy",
+  "title": "bank_hierarchy.cpp — Bank Account Hierarchy",
+  "series": "Exercises",
+  "seriesSlug": "exercises",
+  "order": 4,
+  "tags": [
+    "cpp",
+    "oop",
+    "inheritance",
+    "virtual",
+    "protected",
+    "bank"
+  ],
+  "readingTime": 2,
+  "content": "# 📄 bank_hierarchy.cpp — Bank Account Hierarchy\r\n\r\n**File:** `bank_hierarchy.cpp` **Concept:** Inheritance, Virtual Methods, Override, `protected` Members\r\n\r\n---\r\n\r\n## 🧠 What Does This File Do?\r\n\r\nModels a banking system. `BankAccount` is the base class with common deposit/withdraw/display logic. `SavingsAccount` and `CheckingAccount` inherit from it and each override `withdraw()` with their own rules.\r\n\r\n---\r\n\r\n## 🔑 Key Concepts\r\n\r\n### `protected` vs `private`\r\n\r\n```cpp\r\nprotected:\r\n    string account_holder_name;\r\n    double balance;\r\n```\r\n\r\n- `private` members are **not accessible** to child classes.\r\n- `protected` members **are accessible** to child classes but still hidden from outside code.\r\n- `balance` must be `protected` so `SavingsAccount` and `CheckingAccount` can read/modify it directly.\r\n\r\n### Virtual Method Override\r\n\r\n```cpp\r\nvirtual bool withdraw(double amount) { ... }  // Base: no overdraft, no minimum\r\n```\r\n\r\nChild classes override this with their own business rules:\r\n\r\n- `SavingsAccount::withdraw()` — enforces a **$100 minimum balance**\r\n- `CheckingAccount::withdraw()` — allows **overdraft** up to a limit\r\n\r\n### `printf` for Formatting\r\n\r\n```cpp\r\nprintf(\"%.2f\", balance);\r\n```\r\n\r\nUsed for clean 2-decimal-place output without `setprecision`.\r\n\r\n---\r\n\r\n## 🔍 Code Walkthrough\r\n\r\n**Hierarchy:**\r\n\r\n```\r\nBankAccount (name, number, balance)\r\n├── SavingsAccount  (+ interest_rate, min balance rule)\r\n└── CheckingAccount (+ overdraft_limit)\r\n```\r\n\r\n```cpp\r\n// SavingsAccount: balance can't go below $100\r\nbool withdraw(double amount) override {\r\n    if (amount > balance || balance - amount < 100) return false;\r\n    balance -= amount;\r\n    return true;\r\n}\r\n```\r\n\r\nAlice has $1000. Withdraw $950 → balance would be $50 < $100 → **rejected**.\r\n\r\n```cpp\r\n// CheckingAccount: can overdraft up to limit\r\nbool withdraw(double amount) override {\r\n    if (amount > balance + overdraft_limit) return false;\r\n    balance -= amount;\r\n    return true;\r\n}\r\n```\r\n\r\nBob has $500, overdraft $300. Withdraw $700 → $700 ≤ $800 → **allowed**. Balance becomes -$200.\r\n\r\n```cpp\r\nvoid applyInterest() {\r\n    balance += balance * interest_rate / 100;\r\n}\r\n```\r\n\r\nAdds interest on current balance. E.g. 2% on $1000 → balance becomes $1020.\r\n\r\n---\r\n\r\n## 💡 Takeaway\r\n\r\n> Use `protected` when child classes need direct access to parent data. Use `virtual` + `override` to give each subclass its own business rules while sharing a common interface.\r\n\r\n---",
+  "sourceRepo": "LLD-System_Design",
+  "sourceFile": "Exercises\\06 - Bank Hierarchy.md"
+}

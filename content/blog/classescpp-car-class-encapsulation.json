@@ -1,0 +1,18 @@
+{
+  "slug": "classescpp-car-class-encapsulation",
+  "title": "classes.cpp — Car Class (Encapsulation)",
+  "series": "OOP Fundamentals",
+  "seriesSlug": "oop-fundamentals",
+  "order": 2,
+  "tags": [
+    "cpp",
+    "oop",
+    "encapsulation",
+    "classes",
+    "constructor"
+  ],
+  "readingTime": 2,
+  "content": "# 📄 classes.cpp — Car Class (Encapsulation)\r\n\r\n**File:** `classes.cpp` **Concept:** Classes, Encapsulation, Constructors, Methods\r\n\r\n---\r\n\r\n## 🧠 What Does This File Do?\r\n\r\nDefines a `car` class that models a real car — with a brand, model, and speed. You can accelerate, brake, and display the car's status. It's a clean example of **encapsulation**: the `speed` is hidden from the outside world and can only be changed through controlled methods.\r\n\r\n---\r\n\r\n## 🔑 Key Concepts\r\n\r\n### Encapsulation\r\n\r\n- `speed`, `brand`, `model` are `private` — they cannot be accessed or modified directly from outside the class.\r\n- Public methods (`accelerate`, `brake`, `display_status`) act as the **interface** to safely interact with the data.\r\n\r\n### Constructor\r\n\r\n```cpp\r\ncar(string &brand_name, string &model_name)\r\n```\r\n\r\n- Takes brand and model by **reference** (no copying overhead).\r\n- Sets speed to `0` by default — a safe initial state.\r\n\r\n### Methods\r\n\r\n|Method|What it does|\r\n|---|---|\r\n|`accelerate(int)`|Increases speed by given amount|\r\n|`brake(int)`|Decreases speed, but clamps to 0 (no negative speed)|\r\n|`display_status()`|Prints brand, model, and current speed|\r\n\r\n---\r\n\r\n## 🔍 Code Walkthrough\r\n\r\n```cpp\r\nvoid brake(int decrement) {\r\n    speed -= decrement;\r\n    if (speed < 0) speed = 0;  // Guard: speed can't go below 0\r\n}\r\n```\r\n\r\n> This is a **guard clause** — a safety check that prevents invalid state.\r\n\r\n```cpp\r\ncar myCar(brand, model);  // Constructor called\r\nmyCar.accelerate(50);     // speed = 50\r\nmyCar.brake(20);          // speed = 30\r\n```\r\n\r\n---\r\n\r\n## 💡 Takeaway\r\n\r\n> Encapsulation = **data hiding + controlled access**. The car's speed can't be set to -999 from outside — the class enforces its own rules.\r\n\r\n---",
+  "sourceRepo": "LLD-System_Design",
+  "sourceFile": "01 - Classes.md"
+}
