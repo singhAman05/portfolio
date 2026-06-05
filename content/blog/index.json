@@ -164,7 +164,7 @@
     "posts": [
       {
         "slug": "food-order-system-state-management",
-        "title": "Food Order System � State Management",
+        "title": "Food Order System — State Management",
         "order": 1,
         "readingTime": 2,
         "tags": [
@@ -177,7 +177,7 @@
       },
       {
         "slug": "temperature-sensor-data-validation",
-        "title": "Temperature Sensor � Data Validation",
+        "title": "Temperature Sensor — Data Validation",
         "order": 2,
         "readingTime": 2,
         "tags": [
@@ -189,7 +189,7 @@
       },
       {
         "slug": "shopping-cart-system-maps-discount-logic",
-        "title": "Shopping Cart System � Maps & Discount Logic",
+        "title": "Shopping Cart System — Maps & Discount Logic",
         "order": 3,
         "readingTime": 2,
         "tags": [
@@ -201,7 +201,7 @@
       },
       {
         "slug": "bank-account-hierarchy-inheritance-in-action",
-        "title": "Bank Account Hierarchy � Inheritance in Action",
+        "title": "Bank Account Hierarchy — Inheritance in Action",
         "order": 4,
         "readingTime": 2,
         "tags": [
@@ -214,7 +214,7 @@
       },
       {
         "slug": "notification-system-polymorphism-runtime-dispatch",
-        "title": "Notification System � Polymorphism & Runtime Dispatch",
+        "title": "Notification System — Polymorphism & Runtime Dispatch",
         "order": 5,
         "readingTime": 2,
         "tags": [
@@ -227,7 +227,7 @@
       },
       {
         "slug": "payment-gateway-abstract-classes-dependency-injection",
-        "title": "Payment Gateway � Abstract Classes & Dependency Injection",
+        "title": "Payment Gateway — Abstract Classes & Dependency Injection",
         "order": 6,
         "readingTime": 2,
         "tags": [
@@ -240,7 +240,7 @@
       },
       {
         "slug": "data-exporter-template-method-pattern",
-        "title": "Data Exporter � Template Method Pattern",
+        "title": "Data Exporter — Template Method Pattern",
         "order": 7,
         "readingTime": 2,
         "tags": [
@@ -253,7 +253,7 @@
       },
       {
         "slug": "discount-system-strategy-pattern",
-        "title": "Discount System � Strategy Pattern",
+        "title": "Discount System — Strategy Pattern",
         "order": 8,
         "readingTime": 2,
         "tags": [
@@ -265,7 +265,7 @@
       },
       {
         "slug": "shape-hierarchy-dynamic-dispatch-virtual-functions",
-        "title": "Shape Hierarchy � Dynamic Dispatch & Virtual Functions",
+        "title": "Shape Hierarchy — Dynamic Dispatch & Virtual Functions",
         "order": 9,
         "readingTime": 2,
         "tags": [

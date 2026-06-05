@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BookOpen, Clock } from "lucide-react";
+import { ArrowRight, BookOpen, Route } from "lucide-react";
 import { getBlogSeries } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -11,15 +11,9 @@ export const metadata: Metadata = {
     "Technical articles on OOP, system design, SOLID principles, concurrency, and engineering best practices.",
 };
 
-const seriesIcons: Record<string, string> = {
-  "oop-fundamentals": "🧠",
-  "design-principles": "🏗️",
-  "concurrency--multithreading": "⚡",
-  exercises: "💻",
-};
-
 export default function BlogPage() {
   const series = getBlogSeries();
+  const totalPosts = series.reduce((acc, s) => acc + s.posts.length, 0);
 
   return (
     <section className="px-4 pb-14 sm:px-6">
@@ -33,7 +27,7 @@ export default function BlogPage() {
           </h2>
           <p className="max-w-2xl text-muted-foreground">
             Deep dives into object-oriented design, SOLID principles, concurrency patterns, and
-            system design — synced from my Obsidian vault.
+            system design — synced from my study notes.
           </p>
         </div>
 
@@ -45,50 +39,41 @@ export default function BlogPage() {
             </p>
           </div>
         ) : (
-          <div className="grid gap-6 md:grid-cols-2">
-            {series.map((s) => (
-              <Card key={s.slug} className="border-border/75 bg-card/70 transition-all hover:-translate-y-0.5">
-                <CardHeader>
-                  <div className="mb-2 flex items-center justify-between">
-                    <span className="text-2xl">{seriesIcons[s.slug] || "📚"}</span>
-                    <Badge variant="outline" className="text-xs">
-                      {s.posts.length} {s.posts.length === 1 ? "article" : "articles"}
-                    </Badge>
+          <div className="grid gap-6">
+            <Link href="/blog/road-to-lld" className="group">
+              <Card className="relative overflow-hidden border-border/75 bg-gradient-to-br from-primary/5 via-card/70 to-card/90 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5">
+                <CardHeader className="flex flex-row items-start gap-6 p-8">
+                  <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-primary/12 text-primary shadow-sm">
+                    <Route className="h-8 w-8" />
                   </div>
-                  <CardTitle className="text-xl">{s.name}</CardTitle>
-                  <CardDescription className="text-sm leading-relaxed">
-                    {s.posts.length} articles covering{" "}
-                    {Array.from(new Set(s.posts.flatMap((p) => p.tags)))
-                      .slice(0, 4)
-                      .join(", ")}
-                  </CardDescription>
-
-                  <div className="mt-4 space-y-1.5">
-                    {s.posts.map((post, i) => (
-                      <Link
-                        key={post.slug}
-                        href={`/blog/${post.slug}`}
-                        className="group flex items-center justify-between rounded-xl border border-border/50 bg-background/40 px-3 py-2 transition-all hover:border-primary/30 hover:bg-background/70"
-                      >
-                        <span className="flex items-center gap-2">
-                          <span className="text-xs font-mono text-muted-foreground">
-                            {String(i + 1).padStart(2, "0")}
-                          </span>
-                          <span className="text-sm font-medium text-foreground/90 group-hover:text-foreground">
-                            {post.title}
-                          </span>
-                        </span>
-                        <span className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <Clock className="h-3 w-3" />
-                          {post.readingTime}m
-                          <ArrowRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
-                        </span>
-                      </Link>
-                    ))}
+                  <div className="flex-1">
+                    <div className="mb-2 flex items-center gap-3">
+                      <CardTitle className="text-2xl font-heading tracking-tight">
+                        Road to LLD
+                      </CardTitle>
+                      <Badge variant="outline" className="text-xs">
+                        {totalPosts} articles
+                      </Badge>
+                    </div>
+                    <CardDescription className="text-sm leading-relaxed max-w-xl">
+                      A structured learning path covering OOP fundamentals, SOLID &amp; design principles,
+                      concurrency patterns, and hands-on exercises — from basics to production-level design.
+                    </CardDescription>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {series.map((s) => (
+                        <Badge key={s.slug} variant="secondary" className="text-xs">
+                          {s.name} ({s.posts.length})
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="mt-4 flex items-center gap-2 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                      Explore series
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
                   </div>
                 </CardHeader>
               </Card>
-            ))}
+            </Link>
           </div>
         )}
 

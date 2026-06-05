@@ -49,7 +49,7 @@ export function Hero({ name, tagline, github, linkedin, resume }: HeroProps) {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href={resume} target="_blank">
+                <Link href="/resume">
                   <FileText className="mr-2 h-4 w-4" />
                   Resume
                 </Link>

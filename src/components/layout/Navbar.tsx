@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "/system-design", label: "System Design" },
   { href: "/blog", label: "Blog" },
+  { href: "/resume", label: "Resume" },
 ];
 
 export function Navbar() {
