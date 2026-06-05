@@ -7,9 +7,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import Link from "next/link";
-import { GithubIcon } from "@/components/icons";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
-export function Contact() {
+interface ContactProps {
+  email: string;
+  github: string;
+  linkedin: string;
+}
+
+export function Contact({ email, github, linkedin }: ContactProps) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -42,7 +48,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="px-4 pb-14 sm:px-6">
+    <section id="contact" className="px-4 pb-8 sm:px-6 sm:pb-10">
       <div className="mx-auto max-w-6xl section-shell">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,20 +82,29 @@ export function Contact() {
 
             <div className="mt-5 space-y-2">
               <Link
-                href="mailto:amanshankarsingh05@gmail.com"
+                href={`mailto:${email}`}
                 className="flex items-center gap-2 rounded-xl border border-border/65 bg-background/50 px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Mail className="h-4 w-4 text-primary" />
-                amanshankarsingh05@gmail.com
+                {email}
               </Link>
               <Link
-                href="https://github.com/singhAman05"
+                href={github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl border border-border/65 bg-background/50 px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <GithubIcon className="h-4 w-4 text-primary" />
-                github.com/singhAman05
+                {github.replace("https://", "")}
+              </Link>
+              <Link
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-xl border border-border/65 bg-background/50 px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <LinkedinIcon className="h-4 w-4 text-primary" />
+                {linkedin.replace("https://", "")}
               </Link>
             </div>
           </motion.aside>

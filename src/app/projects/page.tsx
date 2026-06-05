@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   const projects = getProjects();
 
   return (
-    <section className="px-4 pb-14 sm:px-6">
+    <section className="px-4 pb-8 sm:px-6 sm:pb-10">
       <div className="mx-auto max-w-6xl section-shell">
         <div className="mb-12">
           <h1 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">

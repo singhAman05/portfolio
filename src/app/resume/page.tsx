@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <section className="px-4 pb-14 sm:px-6">
+    <section className="px-4 pb-8 sm:px-6 sm:pb-10">
       <div className="mx-auto max-w-5xl section-shell">
         <div className="mb-6 flex items-center justify-between">
           <div>

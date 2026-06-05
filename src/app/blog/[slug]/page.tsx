@@ -67,7 +67,7 @@ export default async function BlogPost({
   }
 
   return (
-    <article className="px-4 pb-14 sm:px-6">
+    <article className="px-4 pb-8 sm:px-6 sm:pb-10">
       <div className="mx-auto max-w-6xl section-shell">
         {/* Back nav */}
         <Button asChild variant="ghost" className="mb-6">

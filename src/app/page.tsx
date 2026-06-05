@@ -29,7 +29,6 @@ export default function Home() {
         tagline={site.tagline}
         github={site.github}
         linkedin={site.linkedin}
-        resume={site.resume}
       />
       <About
         headline={about.headline}
@@ -41,7 +40,7 @@ export default function Home() {
       <SystemDesignSpotlight designs={designs} />
       <Skills categories={skills.categories} />
       <Timeline experience={experience} />
-      <Contact />
+      <Contact email={site.email} github={site.github} linkedin={site.linkedin} />
     </>
   );
 }

@@ -23,7 +23,7 @@ export default function RoadToLLDPage() {
   const series = getBlogSeries();
 
   return (
-    <section className="px-4 pb-14 sm:px-6">
+    <section className="px-4 pb-8 sm:px-6 sm:pb-10">
       <div className="mx-auto max-w-5xl section-shell">
         <div className="mb-10 flex items-center gap-4">
           <Button asChild variant="ghost" size="icon" className="shrink-0">

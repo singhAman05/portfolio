@@ -11,7 +11,7 @@ interface TimelineProps {
 
 export function Timeline({ experience }: TimelineProps) {
   return (
-    <section id="experience" className="px-4 pb-14 sm:px-6">
+    <section id="experience" className="px-4 pb-8 sm:px-6 sm:pb-10">
       <div className="mx-auto max-w-6xl section-shell">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

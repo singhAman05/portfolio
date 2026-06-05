@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BookOpen, Route } from "lucide-react";
+import { ArrowRight, Route } from "lucide-react";
 import { getBlogSeries } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function BlogPage() {
   const totalPosts = series.reduce((acc, s) => acc + s.posts.length, 0);
 
   return (
-    <section className="px-4 pb-14 sm:px-6">
+    <section className="px-4 pb-8 sm:px-6 sm:pb-10">
       <div className="mx-auto max-w-5xl section-shell">
         <div className="mb-12">
           <h1 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -27,7 +27,7 @@ export default function BlogPage() {
           </h2>
           <p className="max-w-2xl text-muted-foreground">
             Deep dives into object-oriented design, SOLID principles, concurrency patterns, and
-            system design — synced from my study notes.
+            system design with code-first examples.
           </p>
         </div>
 
@@ -77,20 +77,6 @@ export default function BlogPage() {
           </div>
         )}
 
-        <div className="mt-12 rounded-2xl border border-border/60 bg-background/40 p-4 text-center">
-          <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <BookOpen className="h-4 w-4" />
-            Content auto-synced from{" "}
-            <Link
-              href="https://github.com/singhAman05/LLD-System_Design"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-primary hover:underline"
-            >
-              LLD-System_Design
-            </Link>
-          </p>
-        </div>
       </div>
     </section>
   );

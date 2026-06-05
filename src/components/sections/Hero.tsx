@@ -11,13 +11,12 @@ interface HeroProps {
   tagline: string;
   github: string;
   linkedin: string;
-  resume: string;
 }
 
-export function Hero({ name, tagline, github, linkedin, resume }: HeroProps) {
+export function Hero({ name, tagline, github, linkedin }: HeroProps) {
   return (
-    <section className="px-4 pb-14 sm:px-6">
-      <div className="mx-auto grid min-h-[78vh] w-full max-w-6xl items-stretch gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+    <section className="px-4 pb-8 sm:px-6 sm:pb-10">
+      <div className="mx-auto grid min-h-[70vh] w-full max-w-6xl items-stretch gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,6 +37,22 @@ export function Hero({ name, tagline, github, linkedin, resume }: HeroProps) {
               {tagline}. I design architecture with real trade-offs and ship
               polished interfaces that feel fast, intentional, and human.
             </p>
+
+            <div className="mt-5 flex flex-wrap gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+              {[
+                "GitHub-level shipping",
+                "StackOverflow clarity",
+                "GitLab workflow mindset",
+                "YouTube-first storytelling",
+              ].map((signal) => (
+                <span
+                  key={signal}
+                  className="rounded-full border border-border/70 bg-background/45 px-3 py-1"
+                >
+                  {signal}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="mt-8 space-y-6">

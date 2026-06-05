@@ -56,7 +56,7 @@ interface SkillsProps {
 
 export function Skills({ categories }: SkillsProps) {
   return (
-    <section id="skills" className="px-4 pb-14 sm:px-6">
+    <section id="skills" className="px-4 pb-8 sm:px-6 sm:pb-10">
       <div className="mx-auto max-w-6xl section-shell">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
